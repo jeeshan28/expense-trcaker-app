@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    *{
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+    html, body{
+      width: 100%;
+      height: 100%;
+      background-color: #EEE7F6;
+   background-image: url(https://t4.ftcdn.net/jpg/01/39/39/05/360_F_139390587_INBvd96oV9FEct4sdZpOKIHbyGWA48NC.jpg);
+background-repeat: no-repeat;
+background-size: cover;
+background-position: center;
+    }
+    h1{
+      padding-top: 15px;
+      text-align: center;
+      color: black;
+      text-decoration: underline;
+    }
+    form{
+      width: 60%;
+      /* height: 80%; */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2vmin;
+      margin: auto;
+      padding: 2vw 0;
+    }
+    input{
+      width: 100%;
+
+    }
+    table {
+          
+          border-collapse: collapse;
+          width: 80%;
+          margin: 20px auto;
+          border: 3px solid black;
+
+      border-radius: 40px;
+
+      }
+
+      th, td {
+          /* border: 3px solid #5F259F; */
+    border: 2px solid rgba(255,255,255,0.1);
+    /* box-shadow: 0 0 40px rgba(8,7,16,0.6); */
+    /* background-color: rgba(31, 30, 30, 0.13); */
+
+          padding: 8px;
+          text-align: center;
+      }
+
+      th {
+          /* background-color: #fff; */
+         /* color: black; */
+         color: black;
+    /* background-color: rgba(31, 30, 30, 0.13); */
+
+
+      }
+
+      tr:nth-child(even) {
+          /* background-color: #fff;
+          color: black; */
+
+          color: black;
+    /* background-color: rgba(31, 30, 30, 0.13); */
+      }
+      
+      tr:nth-child(odd) {
+          /* background-color: #fff;
+          color: black; */
+          color: #fff;
+    /* background-color: rgba(31, 30, 30, 0.13); */
+
+
+      }
+@media (max-width: 600px) {
+  .container{
+    width: 90vw;
+  }
+}
+ 
+  </style>
+  <title>Expense</title>
+</head>
+<body>
+  <%- include('partials/nav') %>
+
+  <h1>ALL EXPENSES</h1>
+  
+ 
+    <%if(!posts.length == 0){ %>
+      <br>
+      <div class="container">
+        <table>
+            <tr>
+                <th>NAME</th>
+                <th>AMOUNT</th>
+                <th>DATE</th>
+                <th>CATEGORY</th>
+                <th>DESCRIPTION</th>
+                <th>DELETE</th>
+                <th>EDIT</th>
+
+    
+    
+            </tr>
+     
+            <div class="tables">
+      <% posts.forEach((post)=>{ %>
+        <tr>
+          <td><%= post.title%></td>
+          <td><%= post.amount%></td>
+          <td><%= post.date%></td>
+          <td><%= post.category%></td>
+          <td><%= post.description%></td>
+
+
+          
+          <td> <a href="/post-delete/<%= post._id%>">❌</a></td>
+          <td> <a href="/post-update/<%= post._id%>">📝</a></td>
+
+
+      </tr>
+          <!-- <h3>Title:- <%= post.title %></h3>
+          <p>description:- <%= post.description %></p> -->
+          <!-- <a href="/post-delete/<%= post._id%>">Delete</a>
+          <a href="/post-update/<%= post._id%>">Update</a>
+          <br><hr><br> -->
+            </div>
+      <% })%>
+</table>
+      </div>
+      <% } %>
+    
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Young+Serif&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+
+    
+
+    <style>
+        *{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body{
+  height: 100%;
+  width: 100%;
+}
+
+body{
+    position: relative;
+}
+
+
+        nav{
+            height: 10%;
+            width: 100%;
+            background-color: black;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            /* text-decoration: none; */
+        }
+
+        a{
+            text-decoration: none;
+            font-size: 20px;
+      font-family: 'Orbitron', sans-serif;
+
+        }
+
+
+        .lnav{
+        height: 100%;
+        width: 50%;
+        display: flex;
+        /* justify-content: space-around; */
+        align-items: center;
+        /* padding-left: 0; */
+        gap: 5vw;
+    }
+
+    .lnav h3{
+        font-family: 'Inconsolata', monospace;
+        font-size: 48px;
+        color: gold;
+    }
+
+    .lnav h3 span{
+        font-size: 58px;
+        font-family: 'Abel', sans-serif;
+    }
+
+        
+        
+        
+    </style>
+       
+    
+</head>
+<body>
+    
+
+    <nav>
+
+        </div>
+
+
+        <% if(!loginUser){ %>
+             <a href="/">HOME</a>
+             <a href="/signup">SIGNUP</a>
+             <a href="/login">SIGNIN</a>
+             <a href="/about">ABOUT</a>
+             <a href="/contact">CONTACT</a>
+             
+     
+         <% } else { %>
+             <a href="/profile">HOME</a>
+             <a href="/resetPassword">RESET PASSWORD</a>
+             <a href="/post/create">ADD EXPENSE</a>
+             <a href="/logout">LOGOUT</a>
+     
+             
+     
+        <% } %>
+         
+     
+     </nav>
+</body>
+</html>
+
+
+
